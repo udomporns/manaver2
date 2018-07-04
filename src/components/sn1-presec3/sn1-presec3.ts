@@ -2,6 +2,7 @@ import { Component,Input, OnInit } from '@angular/core';
 import { Events,AlertController } from 'ionic-angular';
 import { sn1 } from '../../models/SN1/sn1';
 import { sn1_sub } from '../../models/SN1/sn1_sub';
+import { NavController, ModalController } from 'ionic-angular';
 /**
  * Generated class for the Sn1Presec3Component component.
  *
@@ -17,7 +18,7 @@ export class Sn1Presec3Component  {
   text: string;
   buildingHead: string
   buildingDetail: string
-  constructor(private events: Events,private alertCtrl: AlertController) {
+  constructor(private events: Events,private alertCtrl: AlertController,  private popup:ModalController) {
     
     this.text = 'Hello World';
     this.buildingHead = 'ครัวเรือนที่ 1';
@@ -33,6 +34,11 @@ export class Sn1Presec3Component  {
       }
       
     }
+  }
+
+  openPopup(){
+    const popup = this.popup.create('PopupPage')
+    popup.present();
   }
 
   
