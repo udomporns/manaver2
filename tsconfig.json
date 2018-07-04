@@ -12,15 +12,6 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
-    "paths": {
-      "@app/*": [ "app/*" ],
-      "@assets/*": [ "assets/*" ],
-      "@env": [ "environments/environment" ],
-      "@pages/*": [ "pages/*" ],
-      "@services/*": [ "services/*" ],
-      "@tests/*": [ "./*" ],
-      "@theme/*": [ "theme/*" ]
-    }
   },
   "include": [
     "src/**/*.ts"
