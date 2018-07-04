@@ -1,87 +1,84 @@
+<!--หน้าที่ 1-->
+<ion-card style="background-color:#FFFFFF">
+  <ion-item>
+    <ion-col col-6>
+      <ion-list>
+        <p text-left style="font-size: 18px; color: #000000"> ชื่อถนน/ลำน้ำหรือละแวกน้ำ</p>
+        <ion-item>
+          <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col col-6>
+      <ion-list>
+        <p text-left style="font-size: 18px; color: #000000"> ชื่อตรอก/ซอย</p>
+        <ion-item>
+          <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col col-6>
+      <ion-list>
+        <p text-left style="font-size: 18px; color: #000000"> ชื่อหมู่บ้าน/คอนโด/อาคาร/สำนักงาน/สถานประกอบการ/สถาบัน/อื่น ๆ</p>
+        <ion-item>
+          <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col col-6>
+      <ion-list>
+        <p text-left style="font-size: 18px; color: #000000">เลขที่บ้าน/อาคาร </p>
+        <ion-item>
+          <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col col-6>
+      <ion-row>
+        <button style="font-size: 15px" color="secondary" ion-button round text-left ion-button (click)="gopage1()"> เปลี่ยนเป็นตำแหน่งปัจจุบัน </button>
+      </ion-row>
+    </ion-col>
+    <p text-left style="font-size: 18px; color: #000000">ประเภทบ้าน/อาคาร/สิ่งปลูกสร้าง </p>
+    <ion-item>
+      <ion-select type="text" placeholder="กรุณาเลือกประเภทอาคาร" interface="action-sheet" cancelText="ยกเลิก">
+        <ion-option value='1'>1.บ้านเดี่ยว</ion-option>
+        <ion-option value='2'>2.บ้านแฝด/ทาวน์เฮ้าส์</ion-option>
+        <ion-option value='3'>3.ห้องแถว/เรือนแถว/ตึกแถว</ion-option>
+        <ion-option value='4'>4.อาคารสูง(คอนโดฯ/แมนชั่น/แฟลต/อพาร์ทเมนท์)</ion-option>
+        <ion-option value='5'>5.อาคารสำนักงานเอกชน</ion-option>
+        <ion-option value='6'>6.โรงแรม/รีสอร์ท/เกสเฮาส์</ion-option>
+        <ion-option value='7'>7.สถานพยาบาล:ภาครัฐ</ion-option>
+        <ion-option value='8'>8.สถานพยาบาล:ภาคเอกชน</ion-option>
+        <ion-option value='9'>9.สถานที่ราชการ/รัฐวิสาหกิจ</ion-option>
+        <ion-option value='10'>10.ศาสนสถาน</ion-option>
+        <ion-option value='11'>11.สถานศึกษา:ภาครัฐ</ion-option>
+        <ion-option value='12'>12.สถานศึกษา:ภาคเอกชน</ion-option>
+        <ion-option value='13'>13.โกดัง/โรงงาน</ion-option>
+        <ion-option value='14'>14.โรงเรือนเพาะปลูก/เลี้ยงสัตว์</ion-option>
+        <ion-option value='15'>15.อาคารกำลังก่อสร้าง</ion-option>
+        <ion-option value='16'>16.อื่นๆ</ion-option>
+      </ion-select>
+    </ion-item>
+    <p text-left style="font-size: 18px; color: #000000">การเข้าพบ 1/3</p>
+    <ion-item>
+      <ion-select placeholder="กรุณาเลือกผลการเข้าพบ" interface="action-sheet" cancelText="ยกเลิก">
+        <ion-option value='1'>1.มีผู้ให้ข้อมูลให้ความร่วมมือ</ion-option>
+        <ion-option value='2'>2.มีผู้ให้ข้อมูล แต่ไม่ให้ความร่วมมือ</ion-option>
+        <ion-option value='3'>3.ไม่มี/ไม่พบผู้ให้ข้อมูล</ion-option>
+        <ion-option value='4'>4.บ้าน/อาคาร ว่างหรือร้าง</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-col col-6>
+      <ion-list>
+        <p text-left style="font-size: 18px; color: #000000"> ให้บันทึกข้อมูลเกี่ยวกับปัญหา/อุปสรรค/การนัดหมาย/เหตุผล ที่นับจดไม่ได้ </p>
+        <ion-row>
+            <button style="font-size: 20px font;color: #FFFFFF;background: #4682B4" ion-button round text-left ion-button (click)="presentProblem() " > กรุณาระบุปัญหา </button>
+          </ion-row>
+      </ion-list>
+    </ion-col>
+  </ion-item>
 
-      <!--หน้าที่ 1-->
-        <ion-card style="background-color:#FFFFFF">
-          <ion-item>
-            <ion-col col-6>
-              <ion-list>
-                <p text-left style="font-size: 18px; color: #000000"> ชื่อถนน/ลำน้ำหรือละแวกน้ำ</p>
-                <ion-item>
-                  <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
-                </ion-item>
-              </ion-list>
-            </ion-col>
-            <ion-col col-6>
-              <ion-list>
-                <p text-left style="font-size: 18px; color: #000000"> ชื่อตรอก/ซอย</p>
-                <ion-item>
-                  <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
-                </ion-item>
-              </ion-list>
-            </ion-col>
-            <ion-col col-6>
-              <ion-list>
-                <p text-left style="font-size: 18px; color: #000000"> ชื่อหมู่บ้าน/คอนโด/อาคาร/สำนักงาน/สถานประกอบการ/สถาบัน/อื่น ๆ</p>
-                <ion-item>
-                  <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
-                </ion-item>
-              </ion-list>
-            </ion-col>
-            <ion-col col-6>
-              <ion-list>
-                <p text-left style="font-size: 18px; color: #000000">เลขที่บ้าน/อาคาร </p>
-                <ion-item>
-                  <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
-                </ion-item>
-              </ion-list>
-            </ion-col>
-            <ion-col col-6>
-              <ion-row>
-                <button style="font-size: 15px" color="secondary" ion-button round text-left ion-button (click)="gopage1()"> เปลี่ยนเป็นตำแหน่งปัจจุบัน </button>
-              </ion-row>
-            </ion-col>
-            <p text-left style="font-size: 18px; color: #000000">ประเภทบ้าน/อาคาร/สิ่งปลูกสร้าง </p>
-            <ion-item>
-              <ion-select type="text" placeholder="กรุณาเลือกประเภทอาคาร" interface="action-sheet" cancelText="ยกเลิก">
-                <ion-option value='1'>1.บ้านเดี่ยว</ion-option>
-                <ion-option value='2'>2.บ้านแฝด/ทาวน์เฮ้าส์</ion-option>
-                <ion-option value='3'>3.ห้องแถว/เรือนแถว/ตึกแถว</ion-option>
-                <ion-option value='4'>4.อาคารสูง(คอนโดฯ/แมนชั่น/แฟลต/อพาร์ทเมนท์)</ion-option>
-                <ion-option value='5'>5.อาคารสำนักงานเอกชน</ion-option>
-                <ion-option value='6'>6.โรงแรม/รีสอร์ท/เกสเฮาส์</ion-option>
-                <ion-option value='7'>7.สถานพยาบาล:ภาครัฐ</ion-option>
-                <ion-option value='8'>8.สถานพยาบาล:ภาคเอกชน</ion-option>
-                <ion-option value='9'>9.สถานที่ราชการ/รัฐวิสาหกิจ</ion-option>
-                <ion-option value='10'>10.ศาสนสถาน</ion-option>
-                <ion-option value='11'>11.สถานศึกษา:ภาครัฐ</ion-option>
-                <ion-option value='12'>12.สถานศึกษา:ภาคเอกชน</ion-option>
-                <ion-option value='13'>13.โกดัง/โรงงาน</ion-option>
-                <ion-option value='14'>14.โรงเรือนเพาะปลูก/เลี้ยงสัตว์</ion-option>
-                <ion-option value='15'>15.อาคารกำลังก่อสร้าง</ion-option>
-                <ion-option value='16'>16.อื่นๆ</ion-option>
-              </ion-select>
-            </ion-item>
-            <p text-left style="font-size: 18px; color: #000000">การเข้าพบ 1/3</p>
-            <ion-item>
-              <ion-select placeholder="กรุณาเลือกผลการเข้าพบ" interface="action-sheet" cancelText="ยกเลิก">
-                <ion-option value='1'>1.มีผู้ให้ข้อมูลให้ความร่วมมือ</ion-option>
-                <ion-option value='2'>2.มีผู้ให้ข้อมูล แต่ไม่ให้ความร่วมมือ</ion-option>
-                <ion-option value='3'>3.ไม่มี/ไม่พบผู้ให้ข้อมูล</ion-option>
-                <ion-option value='4'>4.บ้าน/อาคาร ว่างหรือร้าง</ion-option>
-              </ion-select>
-            </ion-item>
-            <ion-col col-6>
-                <ion-list>
-                  <p text-left style="font-size: 18px; color: #000000"> ให้บันทึกข้อมูลเกี่ยวกับปัญหา/อุปสรรค/การนัดหมาย/เหตุผล ที่นับจดไม่ได้ </p>
-                  <br>
-                  <ion-item>
-                    <ion-input text placeholder="กรุณากรอกข้อมูล"></ion-input>
-                  </ion-item>
-                </ion-list>
-            </ion-col>
-    
-            
-          </ion-item>
-        </ion-card>
-        <div padding>
-            <button style="font-size: 20px ;background-color:#0066FF" ion-button round text-left ion-button full (click)="submit()">ถัดไป </button>
-          </div>
+</ion-card>
+<div padding>
+  <button style="font-size: 20px ;background-color:#0066FF" ion-button round text-left ion-button full (click)="submit()">ถัดไป </button>
+</div>
