@@ -44,6 +44,7 @@ export class Sn1Sec1Component {
     
   }
 
+
   submit(){
     if(this.sn1first.valid){
       this.notValid = false;
@@ -51,6 +52,7 @@ export class Sn1Sec1Component {
     }
     else {
       this.notValid = true;
+      
     }
 
   }
