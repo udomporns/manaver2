@@ -1,0 +1,294 @@
+<ion-header>
+    <ion-navbar text-center>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <img src="../assets/imgs/logos.png" width="150">
+    </ion-navbar>
+    <div>
+      <ion-segment [(ngModel)]="sn">
+        <ion-segment-button id="segment-button" value="sn1" style="font-family:Arial; font-size: 20px; background-color:#0066FF; color: 
+          #FFFFFF">
+          สน.1
+        </ion-segment-button>
+        <ion-segment-button id="segment-button" value="sn2" style="font-family:Arial; font-size: 20px; background-color:#0066FF; color: 
+          #FFFFFF">
+          สน.2-2
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-header>
+  
+  <ion-content padding text-center>
+    <div [ngSwitch]="sn">
+      <ion-slides #slider>
+        <ion-slide *ngSwitchCase="'sn1'">
+          <ion-grid>
+            <ion-row>
+  
+              <ion-col col-3>
+                <ion-list>
+                  <button color="primary" style="font-size: 18px;height: 65px" ion-button full (click)="generateSN1()">สำรวจหน่วยต่อไป</button>
+                </ion-list>
+              </ion-col>
+  
+              <ion-col col-3>
+                <ion-list>
+                  <button color="secondary" style="font-size: 18px;height: 65px" ion-button full>อัปเดตข้อมูล</button>
+                </ion-list>
+              </ion-col>
+  
+              <!--<ion-col col-3>
+                <ion-list class="lighter" ion-icon name="ios-search-outline">
+                  <input type="text" style="font-size: 19px" class="search rounded" placeholder="ค้นหาเลขที่บ้าน...">
+                </ion-list>
+              </ion-col>-->
+  
+              <ion-col col-3>
+                <ion-list style="height: 70px;background-color: rgb(241, 241, 241)">
+                  <ion-item style="background-color: rgb(241, 241, 241)">
+                    <ion-label style="font-size: 18px; color: #000000;">ข้อมูล</ion-label>
+                    <ion-select [(ngModel)]="snn" interface="popover">
+                      <ion-option value="1">ข้อมูลทั้งหมด</ion-option>
+                      <ion-option value="2">ส่งแล้ว</ion-option>
+                      <ion-option value="3">รอส่ง</ion-option>
+                      <ion-option value="4">หยุดชั่วคราว</ion-option>
+                      <ion-option value="5">สำรวจครั้งที่ 1 และ 2</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+  
+              <ion-col col-3>
+                <ion-list style="background-color: rgb(218, 218, 218);height: 100px;font-size: 18px;height: 70px">
+                  <ion-searchbar style="font-size: 18px;height: 70px" [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="ค้นหาเลขที่บ้าน"></ion-searchbar>
+                </ion-list>
+              </ion-col>
+  
+              <ion-col>
+                <ion-list style="background-color: rgb(241, 241, 241)">
+                  <ion-item style="background-color: rgb(241, 241, 241)">
+                    <ion-label style="font-size: 18px; color: #000000;">งานทั้งหมด</ion-label>
+                    <ion-select interface="popover">
+                      <ion-option value="1">Fs ให้แก้ไข</ion-option>
+                      <ion-option value="2">งานทั้งหมด</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+  
+            <ion-row style="background-color: rgb(241, 236, 236);text-align:center;border-bottom:1px rgb(241, 236, 236) solid;border-top:1px rgb(241, 236, 236) solid;">
+              <ion-col col-1 style="font-size:18px;">ลำดับที่</ion-col>
+              <ion-col col-2 style="font-size:18px;">บ้านเลขที่</ion-col>
+              <ion-col col-2 style="font-size:18px;">ชื่อสถานที่</ion-col>
+              <!--<ion-col col-4>
+              <ion-row text-wrap style="font-size:18px;margin-left:auto;">
+                ครัวเรือน / สถานประกอบการ
+              </ion-row>
+              <ion-row style="text-align:center">-->
+              <ion-col col-2 style="font-size:18px;">ครัวเรือน / สถานประกอบการ
+                <b style="color: green">สมบูรณ์</b>
+              </ion-col>
+              <ion-col col-2 style="font-size:18px;">ครัวเรือน / สถานประกอบการ
+                <b style="color: red">ไม่สมบูรณ์</b>
+              </ion-col>
+              <!-- </ion-row>
+            </ion-col>-->
+              <ion-col col-1 style="font-size:18px;" no-margin>บันทึก</ion-col>
+              <ion-col col-1 style="font-size:18px;" no-margin>แก้ไข</ion-col>
+              <ion-col col-1 style="font-size:18px;" no-margin>ลบ</ion-col>
+            </ion-row>
+  
+            <ion-row style="text-align:center;border-bottom:1px rgb(241, 236, 236) solid;border-top:1px rgb(241, 236, 236) solid;">
+              <ion-col col-1 style="font-size:18px;">1</ion-col>
+              <ion-col col-2 style="font-size:18px;">112/1</ion-col>
+              <ion-col col-2 style="font-size:18px;">บ้านไทย</ion-col>
+              <ion-col col-2 style="font-size:18px;">
+                <b style="color: green">
+                  <ion-icon name="checkmark"></ion-icon>
+                </b>
+              </ion-col>
+              <ion-col col-2 style="font-size:18px;">
+                <b style="color: red"></b>
+              </ion-col>
+              <ion-col col-1 style="font-size:14px;" no-margin>
+                <button style="font-size: 20px" color="secondary" ion-button>
+                  <ion-icon name="cloud-done"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col col-1 style="font-size:14px;" no-margin>
+                <button style="font-size: 20px" color="primary" ion-button>
+                  <ion-icon name="settings"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col col-1 style="font-size:14px;" no-margin>
+                <button style="font-size: 20px" color="danger" ion-button>
+                  <ion-icon name="trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+  
+            <ion-row style="text-align:center;border-bottom:1px rgb(241, 236, 236) solid;">
+              <ion-col col-1 style="font-size:18px;">2</ion-col>
+              <ion-col col-2 style="font-size:18px;">116/1</ion-col>
+              <ion-col col-2 style="font-size:18px;">บ้านไม้ไทย</ion-col>
+              <ion-col col-2 style="font-size:18px;">
+                <b style="color: green"></b>
+              </ion-col>
+              <ion-col col-2 style="font-size:18px;">
+                <b style="color: red">
+                  <ion-icon name="checkmark"></ion-icon>
+                </b>
+              </ion-col>
+              <ion-col col-1 style="font-size:14px;" no-margin>
+                <button style="font-size: 20px" color="secondary" ion-button>
+                  <ion-icon name="cloud-done"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col col-1 style="font-size:14px;" no-margin>
+                <button style="font-size: 20px" color="primary" ion-button>
+                  <ion-icon name="settings"></ion-icon>
+                </button>
+              </ion-col>
+              <ion-col col-1 style="font-size:14px;" no-margin>
+                <button style="font-size: 20px" color="danger" ion-button>
+                  <ion-icon name="trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+    <div [ngSwitch]="sn">
+      <ion-slides #slider>
+        <ion-slide *ngSwitchCase="'sn2'">
+            <ion-grid>
+                <ion-row>
+      
+                  <ion-col col-3>
+                    <ion-list>
+                      <button color="primary" style="font-size: 18px;height: 65px" ion-button full (click)="gofrom1()">สำรวจหน่วยต่อไป</button>
+                    </ion-list>
+                  </ion-col>
+      
+                  <ion-col col-3>
+                    <ion-list>
+                      <button color="secondary" style="font-size: 18px;height: 65px" ion-button full>อัปเดตข้อมูล</button>
+                    </ion-list>
+                  </ion-col>
+      
+                  <ion-col col-3>
+                    <ion-list style="height: 70px;background-color: rgb(241, 241, 241)">
+                      <ion-item style="background-color: rgb(241, 241, 241)">
+                        <ion-label style="font-size: 18px; color: #000000;">ข้อมูล</ion-label>
+                        <ion-select [(ngModel)]="snn" interface="popover">
+                          <ion-option value="1">ข้อมูลทั้งหมด</ion-option>
+                          <ion-option value="2">ส่งแล้ว</ion-option>
+                          <ion-option value="3">รอส่ง</ion-option>
+                          <ion-option value="4">หยุดชั่วคราว</ion-option>
+                          <ion-option value="5">สำรวจครั้งที่ 1 และ 2</ion-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+                  </ion-col>
+      
+                  <ion-col col-3>
+                    <ion-list style="background-color: rgb(218, 218, 218);height: 100px;font-size: 18px;height: 70px">
+                      <ion-searchbar style="font-size: 18px;height: 70px" [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()" placeholder="ค้นหาเลขที่บ้าน"></ion-searchbar>
+                    </ion-list>
+                  </ion-col>
+      
+                  <ion-col>
+                    <ion-list style="background-color: rgb(241, 241, 241)">
+                      <ion-item style="background-color: rgb(241, 241, 241)">
+                        <ion-label style="font-size: 18px; color: #000000;">งานทั้งหมด</ion-label>
+                        <ion-select interface="popover">
+                          <ion-option value="1">Fs ให้แก้ไข</ion-option>
+                          <ion-option value="2">งานทั้งหมด</ion-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-list>
+                  </ion-col>
+                </ion-row>
+      
+                <ion-row style="background-color: rgb(241, 236, 236);text-align:center;border-bottom:1px rgb(241, 236, 236) solid;border-top:1px rgb(241, 236, 236) solid;">
+                  <ion-col col-1 style="font-size:18px;">ลำดับที่</ion-col>
+                  <ion-col col-2 style="font-size:18px;">บ้านเลขที่</ion-col>
+                  <ion-col col-2 style="font-size:18px;">ชื่อสถานที่</ion-col>
+                  <ion-col col-2 style="font-size:18px;">ครัวเรือน / สถานประกอบการ
+                    <b style="color: green">สมบูรณ์</b>
+                  </ion-col>
+                  <ion-col col-2 style="font-size:18px;">ครัวเรือน / สถานประกอบการ
+                    <b style="color: red">ไม่สมบูรณ์</b>
+                  </ion-col>
+                  <ion-col col-1 style="font-size:18px;" no-margin>บันทึก</ion-col>
+                  <ion-col col-1 style="font-size:18px;" no-margin>แก้ไข</ion-col>
+                  <ion-col col-1 style="font-size:18px;" no-margin>ลบ</ion-col>
+                </ion-row>
+      
+                <ion-row style="text-align:center;border-bottom:1px rgb(241, 236, 236) solid;border-top:1px rgb(241, 236, 236) solid;">
+                  <ion-col col-1 style="font-size:18px;">1</ion-col>
+                  <ion-col col-2 style="font-size:18px;">112/1</ion-col>
+                  <ion-col col-2 style="font-size:18px;">บ้านไทย</ion-col>
+                  <ion-col col-2 style="font-size:18px;">
+                    <b style="color: green">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </b>
+                  </ion-col>
+                  <ion-col col-2 style="font-size:18px;">
+                    <b style="color: red"></b>
+                  </ion-col>
+                  <ion-col col-1 style="font-size:14px;" no-margin>
+                    <button style="font-size: 20px" color="secondary" ion-button>
+                      <ion-icon name="cloud-done"></ion-icon>
+                    </button>
+                  </ion-col>
+                  <ion-col col-1 style="font-size:14px;" no-margin>
+                    <button style="font-size: 20px" color="primary" ion-button>
+                      <ion-icon name="settings"></ion-icon>
+                    </button>
+                  </ion-col>
+                  <ion-col col-1 style="font-size:14px;" no-margin>
+                    <button style="font-size: 20px" color="danger" ion-button>
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  </ion-col>
+                </ion-row>
+      
+                <ion-row style="text-align:center;border-bottom:1px rgb(241, 236, 236) solid;">
+                  <ion-col col-1 style="font-size:18px;">2</ion-col>
+                  <ion-col col-2 style="font-size:18px;">116/1</ion-col>
+                  <ion-col col-2 style="font-size:18px;">บ้านไม้ไทย</ion-col>
+                  <ion-col col-2 style="font-size:18px;">
+                    <b style="color: green"></b>
+                  </ion-col>
+                  <ion-col col-2 style="font-size:18px;">
+                    <b style="color: red">
+                      <ion-icon name="checkmark"></ion-icon>
+                    </b>
+                  </ion-col>
+                  <ion-col col-1 style="font-size:14px;" no-margin>
+                    <button style="font-size: 20px" color="secondary" ion-button>
+                      <ion-icon name="cloud-done"></ion-icon>
+                    </button>
+                  </ion-col>
+                  <ion-col col-1 style="font-size:14px;" no-margin>
+                    <button style="font-size: 20px" color="primary" ion-button>
+                      <ion-icon name="settings"></ion-icon>
+                    </button>
+                  </ion-col>
+                  <ion-col col-1 style="font-size:14px;" no-margin>
+                    <button style="font-size: 20px" color="danger" ion-button>
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  
+  </ion-content>
