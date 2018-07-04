@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Sn1Page } from '../pages/sn1/sn1';
 import { MainPage } from '../pages/main/main';
+import { PopupPageModule } from '../pages/popup/popup.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MainPage } from '../pages/main/main';
   ],
   imports: [
     BrowserModule,
+    PopupPageModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
   ],

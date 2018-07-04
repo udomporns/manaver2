@@ -32,7 +32,7 @@ export class Sn1Page {
       N0: null,
       A9: null,
       A10: null,
-      N: null,
+      N: 1,
       A11: '',
       H3: null,
 

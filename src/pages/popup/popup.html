@@ -1,0 +1,139 @@
+<!--
+  Generated template for the PopupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>เริ่มสำรวจ</ion-title>
+        <ion-buttons end>
+          <button ion-button (click)="closePopup()">Close</button>
+        </ion-buttons>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+        <div>
+            <ion-card style="background-color:#FFFFFF">
+                    <ion-item>
+                      <ion-col col-6>
+                        <p text-left style="font-size: 18px; color: #000000"> 3.1 ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง</p>
+                        <ion-item style="background-color:#DCDCDC">
+                          <label> ลำดับครัวเรือน/สถานประกอบการในอาคาร &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            1 </label>
+                        </ion-item>
+                          <br>
+                      </ion-col>
+                    </ion-item>
+            
+                    <ion-item>
+                      <p text-left style="font-size: 18px; color: hsl(0, 0%, 0%)"> 3.2 กิจกรรมการใช้น้ำ</p>
+                    </ion-item>
+                    <ion-row radio-group [(ngModel)]="relationship">
+                      <ion-col style="text-align:left">
+                        <ion-item>
+                          <label>1.เพื่อการอุปโภคบริโภค:สถานที่นี้มีผู้อาศัยติดต่อกันเกิน 3 เดือนใช่หรือไม่</label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=true></ion-radio>
+                          <ion-label>1. ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=false></ion-radio>
+                          <ion-label>2. ไม่ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+            
+                    <ion-row radio-group [(ngModel)]="relationship">
+                      <ion-col style="text-align:left">
+                        <ion-item>
+                          <label>2.เพื่อการเกษตร:ผู้อยูอาศัยอยู่ในสถานที่นี้มีพื้นที่ปลูกพืช เลี้ยงสัตว์ หรือทำการเกษตรใช่หรือไม่</label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=true></ion-radio>
+                          <ion-label>1. ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=false></ion-radio>
+                          <ion-label>2. ไม่ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+            
+                    <ion-row radio-group [(ngModel)]="relationship">
+                      <ion-col style="text-align:left">
+                        <ion-item>
+                          <label>3.เพื่อการผลิต:สถานที่นี้ใช้เพื่อทำการผลิต ใช่หรือไม่</label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=true></ion-radio>
+                          <ion-label>1. ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=false></ion-radio>
+                          <ion-label>2. ไม่ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+            
+            
+                    <ion-row radio-group [(ngModel)]="relationship">
+                      <ion-col style="text-align:left">
+                        <ion-item>
+                          <label>4.เพื่อการบริการ:สถานที่นี้ใช้เพื่อทำการบริการ ใช่หรือไม่</label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=true></ion-radio>
+                          <ion-label>1. ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col>
+                        <ion-item>
+                          <ion-radio item-left [value]=false></ion-radio>
+                          <ion-label>2. ไม่ใช้</ion-label>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+            
+                    <ion-item>
+                      <ion-col col-6>
+                        <p text-left style="font-size: 18px; color: #000000"> ปัญหา/อุปสรรค</p>
+                        <ion-item>
+                          <ion-input type="text" placeholder="กรุณากรอกข้อมูล"></ion-input>
+                        </ion-item>
+                      </ion-col>
+                    </ion-item>
+                    <button style="font-size: 20px" color="secondary" ion-button round text-left ion-button full (click)="gofrom1()"> เริ่มสำรวจ สน.2-1</button>
+    
+        
+            </ion-card>
+          </div>
+    </ion-content>
+    
