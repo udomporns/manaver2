@@ -12,7 +12,7 @@ import { sn1_sub } from '../../models/SN1/sn1_sub';
 })
 export class Sn1Page {
 
-  sn1: sn1 ={
+sn1:sn1 = {
  
       status: 0,
       A1: null,
@@ -35,7 +35,6 @@ export class Sn1Page {
       N: 1,
       A11: '',
       H3: null,
-
   };
 
   sn1_sub:sn1_sub

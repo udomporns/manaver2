@@ -3,6 +3,8 @@ import { Events } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AlertController } from 'ionic-angular';
 import { sn1 } from '../../models/SN1/sn1';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 /**
  * Generated class for the Sn1Sec1Component component.
  *
@@ -14,7 +16,9 @@ import { sn1 } from '../../models/SN1/sn1';
   templateUrl: 'sn1-sec1.html'
 })
 export class Sn1Sec1Component {
-
+  sn1first: FormGroup;
+  isenabled: boolean = false;
+  notValid: boolean = false;
   @Input() sn1:sn1;
 
   text: string;
@@ -22,14 +26,32 @@ export class Sn1Sec1Component {
   lon: any;
   wathId: any;
   message: any;
-  constructor(private events: Events, public geo: Geolocation,private alertCtrl: AlertController) {
+  constructor(private events: Events, public geo: Geolocation,private alertCtrl: AlertController,public formBuilder: FormBuilder) {
     this.message = "-";
     this.lon = "-";
     this.lat = "-";
+
+    this.sn1first = this.formBuilder.group({
+      road: ['', Validators.required],
+      soy: ['', Validators.required],
+      moo: ['', Validators.required],
+      numberH: ['', Validators.required],
+      type: ['', Validators.required],
+      found: ['', Validators.required],
+      save: ['', Validators.required]
+    });
+
+    
   }
 
   submit(){
-    this.events.publish("sec1Submitted",this.sn1);
+    if(this.sn1first.valid){
+      this.notValid = false;
+        this.events.publish("sec1Submitted",this.sn1);
+    }
+    else {
+      this.notValid = true;
+    }
 
   }
 
