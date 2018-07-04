@@ -87,21 +87,13 @@
               </ion-select>
             </ion-item>
             <p style="color: red" id="error" *ngIf="!sn1first.controls.found.valid &&  notValid" danger padding-left>* กรุณาเลือก การเข้าพบ ให้ถูกต้อง</p>
-
-
-
             <ion-col col-6>
                 <ion-list>
                   <p text-left style="font-size: 18px; color: #000000"> ให้บันทึกข้อมูลเกี่ยวกับปัญหา/อุปสรรค/การนัดหมาย/เหตุผล ที่นับจดไม่ได้ </p>
                   <br>
-                  <ion-item>
-                    <ion-input text [formControl]="sn1first.controls['save']" placeholder="กรุณากรอกข้อมูล"></ion-input>
-                  </ion-item>
-                  <p style="color: red" id="error" *ngIf="!sn1first.controls.save.valid &&  notValid" danger padding-left>* กรุณา บันทึกข้อมูลเกี่ยวกับปัญหา/อุปสรรค/การนัดหมาย/เหตุผล ที่นับจดไม่ได้ ให้ถูกต้อง</p>
+                  <button ion-button  style="font-size: 20px ; color:  #FFFFFF;background: #4682B4" outline (click)="presentProblem()">บันทึกข้อมูลเกี่ยวกับปัญหา</button>
                 </ion-list>
             </ion-col>
-    
-            
           </ion-item>
           <div padding>
               <button style="font-size: 20px ;background-color:#0066FF" ion-button round text-left ion-button full (click)="submit()">ถัดไป </button>

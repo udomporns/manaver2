@@ -1,3 +1,28 @@
+<ion-menu [content]="content" type="overlay" side="right">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(homePage)">
+        รับงาน
+      </button>
+      <button ion-item (click)="openPage(friendsPage)">
+        เลือก EA
+      </button>
+      <button ion-item (click)="openPage(eventsPage)">
+        ส่งข้อมูล
+      </button>
+      <button ion-item (click)="closeMenu()">
+        Close Menu
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
 <ion-header>
   <ion-navbar text-center>
     <button ion-button menuToggle>
@@ -9,8 +34,9 @@
       <ion-row>
         <ion-col offset-6>
           <div>
+            
             <h4 style="text-align: right;font-size: 20px">สถานะของ EA กทม :
-              <b style="color: green;">{{x}}</b>
+              <b style="color: green; font-size: 15px">{{x}}</b>
             </h4>
           </div>
         </ion-col>
