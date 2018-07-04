@@ -1,20 +1,58 @@
 <!-- Generated template for the Sn1Presec3Component component -->
 <ion-grid style="text-align: center">
-  <ion-row >
-    <ion-col  *ngFor="let room of sn1.H3; let i= index" col-4>
-        
+  <ion-row>
+    <ion-col *ngFor="let room of sn1.H3; let i= index" col-4>
+
       <ion-card (click)="editBuilding(i)" color="light">
         <ion-card-header>
           ครัวเรือนที่ {{i+1}}
         </ion-card-header>
-        <div><ion-icon name="ios-home" class="ion-icon"></ion-icon></div>
+        <div>
+            <button ion-button icon-only large round class='large_button' (click)="openPopup()" style="background-color:#BEBEBE">
+                <ion-icon name="home"></ion-icon>
+            </button>
+        </div>
         <ion-card-content>
-           
-         {{buildingDetail}}
+
+          {{buildingDetail}}
         </ion-card-content>
       </ion-card>
-    
+
     </ion-col>
-    
+
   </ion-row>
 </ion-grid>
+
+<div [ngSwitch]="pet">
+  <ion-card style="background-color:#FFFFFF">
+    <ion-list *ngSwitchCase="'page3'" text-center>
+      <button style="font-size: 20px; margin:10px" color="secondary" back ion-button round text-center (click)="gopage1()">
+        เพิ่ม ครัวเรือน/สถานประกอบการ
+      </button>
+      <ion-item>
+        <ion-grid>
+          <ion-row text-center>
+
+            <ion-col col-md-4>
+              <h2>ครัวเรือนที่ 1</h2>
+              <button ion-button icon-only large round class='large_button' (click)="openPopup()" style="background-color:#BEBEBE">
+                <ion-icon name="home"></ion-icon>
+              </button>
+              <h5>asd</h5>
+            </ion-col>
+            <ion-col col-md-4>
+              <button ion-button icon-only large round class='large_button' (click)="openPopup()" style="background-color:#00FF7F">
+                <ion-icon name="home"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-md-4>
+              <button ion-button icon-only large round class='large_button' (click)="openPopup()" style="background-color:#FF6347">
+                <ion-icon name="home"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</div>
