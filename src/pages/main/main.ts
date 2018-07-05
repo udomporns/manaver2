@@ -76,6 +76,7 @@ export class MainPage {
     confirm.present()
   }
 
+  
   openmap(){
     this.navCtrl.push(MapPage);
   }

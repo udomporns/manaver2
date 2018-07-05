@@ -1,26 +1,45 @@
 <!-- Generated template for the Sn1Presec3Component component -->
 <ion-grid style="text-align: center">
+  
+    <ion-col col-3>
+        <ion-list  style="height: 70px;">
+          <ion-card>
+          <ion-item  style="background-color: #778899">
+            <ion-label style="font-size: 20; color: #f7f4f4;">ข้อมูล</ion-label>
+            <ion-select [(ngModel)]="snn" interface="popover"style="font-size: 18px; color: #fdfafa;" >
+              <ion-option value="ข้อมูลทั้งหมด">ข้อมูลทั้งหมด</ion-option>
+              <ion-option value="ส่งแล้ว">ส่งแล้ว</ion-option>
+              <ion-option value="รอส่ง">รอส่ง</ion-option>
+              <ion-option value="สำรวจครั้งที่ 1 และ 2">สำรวจครั้งที่ 1 และ 2</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+        </ion-list>
+      </ion-col>
+
+      <ion-card>
   <ion-row >
     <ion-col  *ngFor="let room of sn1.H3; let i= index" col-4>
         
-      <ion-card (click)="editBuilding(i)" color="light">
-        <ion-card-header>
+      <ion-list  color="light">
+        <ion-card-header   >
           ครัวเรือนที่ {{i+1}}
         </ion-card-header>
         <div>
-            <ion-col col-md-4>
+            
                 <button ion-button icon-only large round class='large_button' (click)="openPopup()" style="background-color:#BEBEBE">
                     <ion-icon name="home"></ion-icon>
                   </button>
-            </ion-col>
+            
         </div>
         <ion-card-content>
            
          {{buildingDetail}}
         </ion-card-content>
-      </ion-card>
+      </ion-list>
     
     </ion-col>
     
   </ion-row>
+  </ion-card>
 </ion-grid>
