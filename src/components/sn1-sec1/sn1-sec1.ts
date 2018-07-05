@@ -37,8 +37,8 @@ export class Sn1Sec1Component {
       moo: ['', Validators.required],
       numberH: ['', Validators.required],
       type: ['', Validators.required],
-      found: ['', Validators.required],
-      save: ['', Validators.required]
+      found: ['', Validators.required]
+      // save: ['', Validators.required]
     });
 
     
