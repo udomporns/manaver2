@@ -31,10 +31,9 @@
     <img src="../assets/imgs/logos.png" width="150">
 
     <ion-grid>
-      <ion-row>
-        <ion-col offset-6>
+      <ion-row offset-6>
+        <ion-col >
           <div>
-            
             <h4 style="text-align: right;font-size: 20px">สถานะของ EA กทม :
               <b style="color: green; font-size: 15px">{{x}}</b>
             </h4>
@@ -55,6 +54,15 @@
             </ion-list>
           </div>
         </ion-col>
+
+        <ion-col>
+          <div>
+            <h4 style="font-size: 20px">แผนที่ :
+              <img src="../assets/imgs/google-maps.png" (click)="openmap()" height="20px" width="20px">
+             </h4>
+          </div>
+        </ion-col>
+
       </ion-row>
     </ion-grid>
 
@@ -203,7 +211,7 @@
               </b>
             </ion-col>
             <ion-col col-1 style="font-size:14px;" no-margin>
-                <button (click)="doConfirm()" style="font-size: 20px" color="secondary" ion-button>
+              <button (click)="doConfirm()" style="font-size: 20px" color="secondary" ion-button>
                 <ion-icon name="cloud-done"></ion-icon>
               </button>
             </ion-col>

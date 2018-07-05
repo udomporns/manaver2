@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Sn1Page } from '../sn1/sn1';
 import { AlertController } from 'ionic-angular';
+import { MapPage } from '../map/map';
 
 /**
  * Generated class for the MainPage page.
@@ -46,6 +47,10 @@ export class MainPage {
       ]
     });
     confirm.present()
+  }
+
+  openmap(){
+    this.navCtrl.push(MapPage);
   }
 
 }

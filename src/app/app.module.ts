@@ -10,6 +10,12 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Sn1Page } from '../pages/sn1/sn1';
 import { MainPage } from '../pages/main/main';
 import { PopupPageModule } from '../pages/popup/popup.module';
+import { MapPage } from '../pages/map/map';
+import { MapgooglePage } from '../pages/mapgoogle/mapgoogle';
+import { MapphotoPage } from '../pages/mapphoto/mapphoto';
+
+//import package img viewer
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,10 @@ import { PopupPageModule } from '../pages/popup/popup.module';
     HomePage,
     Sn1Page,
     MainPage,
-    Sn1Page
+    Sn1Page,
+    MapPage,
+    MapgooglePage,
+    MapphotoPage,
 
   ],
   imports: [
@@ -25,6 +34,7 @@ import { PopupPageModule } from '../pages/popup/popup.module';
     PopupPageModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,7 +42,10 @@ import { PopupPageModule } from '../pages/popup/popup.module';
     HomePage,
     Sn1Page,
     MainPage,
-    Sn1Page
+    Sn1Page,
+    MapPage,
+    MapgooglePage,
+    MapphotoPage,
   ],
   providers: [
     StatusBar,
