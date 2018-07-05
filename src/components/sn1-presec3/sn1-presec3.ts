@@ -22,7 +22,7 @@ export class Sn1Presec3Component  {
     
     this.text = 'Hello World';
     this.buildingHead = 'ครัวเรือนที่ 1';
-    this.buildingDetail ='บ้านเลขที่ 199/3';
+    this.buildingDetail ='บ้านเลขที่ 1/1';
   }
   ngOnInit(){
     if(this.sn1.N!=0 && this.sn1.H3 == null){

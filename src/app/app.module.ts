@@ -16,6 +16,7 @@ import { MapphotoPage } from '../pages/mapphoto/mapphoto';
 
 //import package img viewer
 import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
   imports: [
     BrowserModule,
     PopupPageModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     IonicImageViewerModule
@@ -51,7 +53,7 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     StatusBar,
     SplashScreen,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
