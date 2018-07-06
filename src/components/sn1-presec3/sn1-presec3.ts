@@ -42,51 +42,7 @@ export class Sn1Presec3Component  {
   }
 
   
-  presentPrompt() {
-    let alert = this.alertCtrl.create({
-      title: 'ผลการเข้าพบ',
-      inputs: [
-        {
-          type: 'radio',
-          label: 'มีผู้ให้ข้อมูลให้ความร่วมมือ',
-          value: 'value1',
-        },
-        {
-          type: 'radio',
-          label: 'มีผู้ให้ข้อมูล แต่ไม่ให้ความร่วมมือ',
-          value: 'value2',
-        },
-        {
-          type: 'radio',
-          label: 'ไม่มี/ไม่พบผู้ให้ข้อมูล',
-          value: 'value3',
-        },
-        {
-          type: 'radio',
-          label: 'บ้าน/อาคาร ว่างหรือร้าง',
-          value: 'value4',
-        },
-      ],
-      buttons: [
-        {
-          text: 'ยกเลิก',
-          role: 'cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'ยืนยัน',
-          handler: data => {
-            
-          }
-        }
-      ]
-    });
 
-  
-    alert.present();
-  }
   addFamily(){
     const SN1_sub = new sn1_sub();
     this.sn1.H3.push(SN1_sub);
